@@ -2,7 +2,7 @@ class Club {
 	
 	var property actividades=[]
 	var property sanciones
-	var property socios
+	var property socios//s
 	
 	method perfilDelClub(_jugador)
 	
