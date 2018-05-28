@@ -20,6 +20,7 @@ class ClubProfesional inherits Club{
 	
 }
 
+
 class ClubComunitario inherits Club{
 	
 	override method perfilDelClub(_jugador){
