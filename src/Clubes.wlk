@@ -2,7 +2,7 @@ class Club {
 	
 	var property actividades=[]
 	var property sanciones
-	var property socios//s
+	var property socios
 	
 	method perfilDelClub(_jugador)
 	
@@ -65,11 +65,23 @@ class Equipo {
 	
 	var plantel=#{}
 	
+	var property campeonatosObtenidos
+	
 	method sanciones()=sanciones
 	
 	method sancionar(){
 		sanciones=sanciones+1
 	}
+	method evaluacion(){
+		return campeonatosObtenidos*5 + plantel.size()*2 + self.evaluacionDelCapitan() -sanciones*20
+	}
+	
+	method capitan(){
+		
+		return plantel.find({jugador=>jugador.capitan()})
+	}
+	
+	method evaluacionDelCapitan()=if(self.capitan().esEStrella()){2} else {0}
 	
 }
 
